@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/zhihu"
+        android:icon="@mipmap/ic_launcher"
+        android:title="zhihu"/>
+
+    <item
+        android:id="@+id/csdn"
+        android:icon="@mipmap/ic_launcher"
+        android:title="csdn"/>
+
+    <item
+        android:id="@+id/huxiu"
+        android:icon="@mipmap/ic_launcher"
+        android:title="huxiu"/>
+    <item
+        android:id="@+id/kr"
+        android:icon="@mipmap/ic_launcher"
+        android:title="36kr"/>
+
+</menu>

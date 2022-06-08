@@ -1,0 +1,84 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+            jniLibs.srcDirs = ['libs']
+        }
+
+        // Move the tests to tests/java, tests/res, etc...
+        instrumentTest.setRoot('tests')
+
+        // Move the build types to build-types/<type>
+        // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...
+        // This moves them out of them default location under src/<type>/... which would
+        // conflict with src/ being used by the main source set.
+        // Adding new build types or product flavors should be accompanied
+        // by a similar customization.
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+        applicationId "com.umeng.abtest"
+        minSdkVersion 19
+        targetSdkVersion 19
+        versionCode 2
+        versionName "2.2"
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+}
+
+dependencies {
+
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    // 可视化埋点库调试依赖
+    // tracker-release是必须导入的包
+    // tracker-config包仅在埋点配置模式导入，线上模式请切勿导入此包！
+    compile(name: 'tracker-release-1.1.3.P', ext: 'aar')
+    compile(name: 'tracker-config-1.1.3.P', ext: 'aar')
+
+    // 友盟基础组件库
+    compile(name: 'qt-common-1.3.4.P', ext: 'aar')
+    compile(name: 'qt-spm-1.3.4', ext: 'aar')
+
+    // 依赖库
+    compile 'com.android.support:cardview-v7:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'cn.bingoogolapple:bga-banner:2.1.7@aar'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'eu.the4thfloor.volley:com.android.volley:2015.05.28'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'cn.jzvd:jiaozivideoplayer:6.3.1'
+
+}
+
+
+

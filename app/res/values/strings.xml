@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">VT</string>
+    <string name="title_activity_b">ActivityB</string>
+    <string name="title_activity_c">ActivityC</string>
+    <string name="title_activity_d">ActivityD</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+</resources>

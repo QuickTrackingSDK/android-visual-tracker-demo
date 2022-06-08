@@ -1,0 +1,15 @@
+<resources>
+
+
+    <style name="AppBasetheme" parent="Theme.AppCompat.Light">
+
+    </style>
+
+    <style name="AppTheme" parent="AppBasetheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+</resources>
